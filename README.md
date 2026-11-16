@@ -100,4 +100,4 @@ The project includes a production Dockerfile for hosting the frontend and API to
 
 ## Vercel and Neon
 
-For a personal, non-commercial free demo, see [docs/VERCEL_DEPLOY.md](docs/VERCEL_DEPLOY.md). It serves React and FastAPI at one HTTPS origin and connects PostgreSQL through Neon. Vercel's Python runtime is beta, and free database compute pauses when idle.
+For a personal, non-commercial demo using Vercel Services and Neon, see [docs/VERCEL_DEPLOY.md](docs/VERCEL_DEPLOY.md). It serves React and FastAPI under one HTTPS origin. The free hosting plans have usage limits, and Vercel Services and its Python runtime are beta.
