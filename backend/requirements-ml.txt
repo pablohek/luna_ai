@@ -1,0 +1,3 @@
+# Optional research environment only. The application never imports these.
+scikit-learn>=1.6,<2
+xgboost>=3,<4
