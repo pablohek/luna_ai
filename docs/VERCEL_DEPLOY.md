@@ -21,7 +21,7 @@ The root `vercel.json` defines the `app` Vite service and `backend` FastAPI serv
 | `LUNA_DATABASE_URL` | Neon pooled PostgreSQL connection string with TLS enabled |
 | `LUNA_RATE_SECRET` | A new random secret, for example from `py -c "import secrets; print(secrets.token_urlsafe(48))"` |
 
-Never commit or paste the database URL or rate secret into source code. `VERCEL_URL` provides the deployment hostname used to check the origin. If you later use a custom domain, set `LUNA_ORIGIN` to its exact HTTPS origin.
+Never commit or paste the database URL or rate secret into source code. `VERCEL_URL` provides the deployment hostname used to check the origin. Production uses `LUNA_ORIGIN=https://luna-cycle-journal.vercel.app`. When changing the public domain, set `LUNA_ORIGIN` to its exact HTTPS origin and redeploy. Verify `/api/health` on the new domain before redirecting the old address.
 
 5. Run the initial database migration once, before testing accounts. From PowerShell at the project root, set `LUNA_DATABASE_URL` to the Neon connection string in that terminal, enter `backend`, then run `..\.venv\Scripts\python.exe -m luna.db`. This migration needs a database role with schema-migration privileges. The application itself should use a least-privilege role where the database provider allows it.
 6. Start the first deployment. Check the Vercel build output for both services and then test `/api/health`, registration, sign-in, period logging, check-ins, export, and account deletion with synthetic records.
